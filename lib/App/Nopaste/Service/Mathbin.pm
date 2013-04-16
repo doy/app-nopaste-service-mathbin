@@ -26,8 +26,7 @@ sub fill_form {
     my %args = @_;
 
     $mech->submit_form(
-        form_number   => 1,
-        fields        => {
+        with_fields => {
             body => $self->fix_eqns($args{text}),
             do { $args{desc} ? (title => $args{desc}) : () },
             do { $args{nick} ? (name  => $args{nick}) : () },
